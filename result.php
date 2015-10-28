@@ -41,11 +41,11 @@ echo $url;
 
 use Aws\Rds\RdsClient;
 $client = RdsClient::factory(array(
-	'region' => 'us-east-1'
+	'region' => 'us-west-2'
 ));
 
 $result = $client->describeDBInstances(array(
-	'DBInstanceIdentifier'=>'itmo544jrhdb',
+	'DBInstanceIdentifier'=>'itmo544grh-mp1',
 ));
 
 $endpoint = "";
@@ -57,7 +57,7 @@ foreach ($result->getPath('DBInstances/*/Endpoint/Address')as $ep){
 }
 
 	//echo "begin database";
-$link = mysqli_connect($endpoint,"controller","ilovebunnies","itmo544db") or die("Error " . mysqli_error($link));
+$link = mysqli_connect($endpoint,"rui","110224Fish","customerresech") or die("Error " . mysqli_error($link));
 
 //check connection
 if (mysqli_connect_error()){
