@@ -14,12 +14,12 @@ print "Hello world!";
 Enter Email of user:<input type="email" name="useremail"><br>
 Enter Phone of user (1-XXX-XXX-XXXX):<input type="phone" name="phone">
 
-<input type="submit" value="Send File">
+<input type="submit" value="Send File"/>
 </form>
 <hr />
 <form enctype="multipart/form-data" action="gallery'php" method="POST">
 Enter Email of user for gallery to browse:<input type="email" name="email">
-<imput type="submit" value="Load Gallery" />
+<input type="submit" value="Load Gallery" />
 </form>
 
 hello<?php print "world"; ?>
