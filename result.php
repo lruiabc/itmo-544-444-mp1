@@ -1,7 +1,7 @@
 <?php
 //start the session
 session_start();
-echo $_FILES.
+//echo $_FILES;
 echo $_POST['useremail'];
 $uploaddir='/tmp/';
 $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
