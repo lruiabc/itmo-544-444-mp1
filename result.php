@@ -24,10 +24,10 @@ $client = S3lient::factory();
 $buchet = uniqid("php-jrh-",false);
 
 $result = $client->createBucket(array(
-	'Bucket'==> $bucket
+	'Bucket'=> $bucket
 ));
 
-$client->waitUntiBucketExists(array('Bucket'==> $bucket));
+$client->waitUntiBucketExists(array('Bucket'=> $bucket));
 $key = $uploadfile;
 $result = $client->putObject(array(
 	'ACL'=>'public-read',
@@ -57,7 +57,7 @@ foreach ($result->getPath('DBInstances/*/Endpoint/Address')as $ep){
 }
 
 	//echo "begin database";
-$link = mysqli_connect($endpoint,"controller","ilovebunnies","itmo544db") or die("Error", mysqli_error($link));
+$link = mysqli_connect($endpoint,"controller","ilovebunnies","itmo544db") or die("Error " . mysqli_error($link));
 
 //check connection
 if (mysqli_connect_error()){
@@ -79,10 +79,10 @@ $issubscribed=0;
 $stmt->bind_param("sssssii",email,$phone,$filename,$s3rawrul,$s3finishedurl,$status,$issbuscribed);
 
 if(!$stmt->execute()){
-	echo "Execute failed:(" . $stmt->errno . ")" . $stmt->error;"
+	echo "Execute failed:(" . $stmt->errno . ")" . $stmt->error;
 }
 
-printf ("%d Row inserted.\n", $stmt->affected_rows);
+printf("%d Row inserted.\n", $stmt->affected_rows);
 
 $stmt->close();
 
